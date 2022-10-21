@@ -60,7 +60,16 @@
                 }
                 getBooklist();
 
-                
+                $('tbody').on('click','.del',function(){
+                    var id = $(this).attr('data-id')
+                    $.get('http://www.liulongbin.top:3006/api/delbook',{id:id},function(res){
+                        if (res.status !==200) {
+                            return alert('删除失败！')
+                        }else{
+                            getBooklist();
+                        }
+                    })
+                })
                
             })
         </script>
