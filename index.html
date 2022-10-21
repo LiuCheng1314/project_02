@@ -44,25 +44,7 @@
             
         </tbody>
         <script>
-            $(function(){
-                function getBooklist(){
-                    $.get('http://www.liulongbin.top:3006/api/getbooks',function(res){
-                        if (res.status !==200) {
-                            return alert('获取数据失败！')
-                        }
-
-                        var rows = []
-                        $.each(res.data,function(i,item){
-                            rows.push('<tr><td>'+item.id+'</td><td>'+item.bookname+'</td><td>'+item.author+'</td><td>'+item.publisher+'</td><td><a href="javascript:;" class="del" data-id="'+item.id+'">删除</a></td></tr>')
-                        })
-                        $('#tb').empty().append(rows.join(''))
-                    })
-                }
-                getBooklist();
-
-                
-               
-            })
+           
         </script>
     </table>
     
